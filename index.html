@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <input type="checkbox" name="close-menu" id="close-menu" class="close-menu" aria-label="Close menu" role="button">
+    <label for="close-menu" title="close-menu" class="close-menu-label"></label>
 
     <nav>
         <div class="main-container">
@@ -20,13 +22,13 @@
                     <a href="#">logo</a>
                 </div>
 
-                <ul>
+                <ul onclick="getElementById('close-menu').checked = false">
                     <li><a href="#intro">intro</a></li>
                     <li><a href="#grid-one">grid-one</a></li>
                     <li><a href="#gallery">gallery</a></li>
                     <li><a href="#grid-two">grid-two</a></li>
                     <li><a href="#pricing">pricing</a></li>
-                    <li><a href="contact">contact</a></li>
+                    <li><a href="#contact">contact</a></li>
                 </ul>
             </div><!--main-nav-->
         </div><!--container-->
@@ -218,11 +220,45 @@
                 <img src="./assets/img/javascript.svg" alt="">
             </div>
 
+            <div class="contact-form">
+                <fieldset class="form-grid">
+                    
+                    <legend>Contact me</legend>
 
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" name="first-name" id="first-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" name="last-name" id="last-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="messaeg">Message</label>
+                        <textarea name="message" id="message" cols="30"
+                        rows="10"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit">Send message</button>
+                    </div>
+                </fieldset>
+            </div>
 
         </div><!--container-->
     </section><!--contact-->
 
+    <footer>
+        <p>Feito por <a href="https://github.com/viniciusfsant">Vinicius Freitas</a><span class="star"> ★</span></p>
+    </footer>
 
+    <a href="#bg" class="back-to-top">➤</a>
 </body>
 </html>

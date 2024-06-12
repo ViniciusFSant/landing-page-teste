@@ -42,6 +42,32 @@ body {
 .display-grid {
     display: grid;
 }
+body .full-width {
+    width: 100%;
+    flex: 1 1 100%;
+}
+.back-to-top {
+    visibility: hidden;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--color-white);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    text-decoration: none; 
+    border-radius: 50%;
+    color: var(--primary-color); 
+    font-size: 2rem;
+    transform: rotate(-90deg);
+    border: 0.1rem var(--primary-color) solid;
+}
+/* menu-mobile */
+.close-menu, .close-menu-label {
+    display: none;
+}
 /* nav */
 nav {
     position: fixed;
@@ -88,7 +114,6 @@ nav ul li a:hover::after{
     width: 80%;
     right: 10%;
 }
-
 /* bg */
 .bg {
     padding: 0 2rem;
@@ -310,6 +335,62 @@ table tfoot {
 table th, table tfoot {
     background-color: lightgray;
 }
+/* contact */
+.contact-form {
+    padding: 8rem 0;
+    color: white;
+    grid-column: span 2;
+}
+.contact-form .form-grid {
+    display: flex;
+    flex-flow: row wrap;
+    border: none;
+    gap: 2rem;
+}
+.form-grid legend {
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+}
+.form-group {
+    flex: 1 1 32rem;
+}
+.form-group label {
+    display: block;
+}
+.form-group input, textarea {
+    outline: none;
+    border: none;
+    padding: 1.5rem 2rem;
+    width: 100%;
+    font-size: 3rem;
+}
+.form-group button {
+    border: 0.5rem solid var(--color-white);
+    background: none;
+    color: white;
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.form-group button:hover {
+    border: 0.5rem solid var(--primary-color);
+    background: var(--color-white);
+    color: var(--primary-color);
+}
+/* footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+}
+footer a {
+    text-decoration: none;
+    color: initial;
+}
+.star {
+    color: gold;
+}
 
 
 
@@ -343,7 +424,41 @@ table th, table tfoot {
     }    
     .main-nav .logo {
         padding: 15rem 0 1rem 0;
-    }    
+    } 
+    .close-menu-label {
+        display: block;
+    }      
+    .close-menu {
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
+    } 
+    .close-menu-label::after {
+        content: '☰';
+        position: fixed;
+        z-index: 3;
+        top: 2rem;
+        right: 2rem;
+        background-color: var(--primary-color);
+        color: var(--color-white);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+    .close-menu:checked~nav {
+        visibility: visible;
+    }
+    .close-menu:checked~.close-menu-label::after {
+        content: '×';
+    }
+    .back-to-top {
+        visibility: visible;
+    }
     /* bg */
     .bg {
         margin-top: 0;
@@ -393,6 +508,10 @@ table th, table tfoot {
         padding: 2rem 0;
         grid-template-columns: 1fr;
     }   
+    .gallery-img {
+        max-width: 100%;
+        height: 90%;
+    }
     .gallery-description h1 {
         font-family: var(--font-montserrat);
         font-weight: var(--bold);
@@ -418,5 +537,10 @@ table th, table tfoot {
     .grid-two-content > .teste1, .teste2, .teste3 {
         padding: 3.2rem 0 0 0;
     }
-
+    /* form */
+    .contact-form {
+        padding: 8rem 0;
+        color: white;
+        grid-column: span 1;
+    }  
 }
